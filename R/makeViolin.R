@@ -17,7 +17,7 @@
 #'
 #' @export
 makeViolin <- function(sce) {
-    ar <- rowData(sce)[, c(grep("ar", colnames(rowData(sce)), value = TRUE))] %>%
+    ar <- rowData(sce)[, c(grep("ar_", colnames(rowData(sce)), value = TRUE))] %>%
         `colnames<-`(levels(sce$x))
     dat <- data.frame(
         ratio = as.vector(unlist(ar)),
